@@ -1,0 +1,17 @@
+html,body{
+    height: 100%;
+    width:100%;
+}
+
+.circle{
+    height: 25px;
+    width: 25px;
+    background: #0F9FF0;
+    border-radius: 50%;
+    border: 3px solid #0674FF;
+    opacity: 0.9;
+    box-shadow: 0px 0px 8px #12FF2E;
+    position: absolute;
+    display: none;
+    z-index: 10000;
+}

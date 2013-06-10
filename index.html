@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/reset.css"/>
+        <link rel="stylesheet" href="css/styles.css"/>
+        <script src="js/jquery-2.0.2.min.js"></script>
+        <script src="js/touches.js"></script>
+        <script>
+            $(function() {
+                var moveState = new ObjectMoveState($('body')[0]);
+                $('body').on("touchmove mousemove", function() {
+                    for (var i = 0; i < moveState.points.length; i++) {
+                        var circle = $($('.circle').get(i));
+                        circle.css({'left': moveState.points[i].x - (circle.outerWidth() / 2), 'top': moveState.points[i].y - (circle.outerHeight() / 2), 'display': 'block'})
+                    }
+                }).on("touchend", function() {
+                    $('.circle').css({'display': 'none'})
+                });
+            });
+            $(window).on("touchmove", false);
+        </script>
+    </head>
+    <body>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </body>
+</html>
